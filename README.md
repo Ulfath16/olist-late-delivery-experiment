@@ -28,6 +28,7 @@ damage to satisfaction, even though the delivery is still late.
 | `notebooks/01_data_exploration.ipynb` | Loads and validates all 9 Olist tables, builds a clean order-level dataset, computes the baseline finding above |
 | `notebooks/02_power_analysis.ipynb` | Derives minimum detectable effect and required sample size from the real baseline rate |
 | `notebooks/03_simulate_experiment.ipynb` | Simulates the experiment with a realistic, heterogeneous treatment effect; validates a two-proportion z-test against known ground truth; segment analysis |
+| `notebooks/04_cuped_variance_reduction.ipynb` | Applies CUPED variance reduction using delay severity as a pre-treatment covariate; compares confidence interval width with and without the adjustment |
 
 ## Key methodology decisions
 
@@ -49,6 +50,8 @@ damage to satisfaction, even though the delivery is still late.
   the pre-registered decision criterion to ship.
 - Segment analysis shows the average effect hides real heterogeneity: ~15pt improvement for
   delays under 2 days, shrinking to ~4-5pts for delays over 10 days.
+- CUPED variance reduction using delay severity as covariate: outcome variance reduced by 10.6%,
+  narrowing the 95% confidence interval by 5.5%, with no additional data collection required.
 
 ## Data
 
@@ -65,4 +68,4 @@ pip install -r requirements.txt
 python -m notebook
 ```
 
-Run the notebooks in order: `01_data_exploration` -> `02_power_analysis` -> `03_simulate_experiment`.
+Run the notebooks in order: `01_data_exploration` -> `02_power_analysis` -> `03_simulate_experiment` -> `04_cuped_variance_reduction`.
