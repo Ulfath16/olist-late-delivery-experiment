@@ -5,3 +5,4 @@ __pycache__/
 *.pyc
 .DS_Store
 data/olist_orders_clean.csv
+data/olist_simulated_experiment.csv
